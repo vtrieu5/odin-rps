@@ -6,10 +6,27 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <h1>Rock Paper Scissors</h1>
+    <button class="rock">Rock</button>
+    <button class="paper">Paper</button>
+    <button class="scissors">Scissors</button>
     <script>
-    for (let i= 0; i < 5; i++) {
-        playGame();
-    }     
+        const buttons = document.querySelectorAll('button');
+        const result = document.createElement('div');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const playerSelection = button.className;
+                const computerSelection = getComputerChoice();
+                playRound(playerSelection, computerSelection);
+                result.textContent = retrieveScore();
+                document.body.appendChild(result);
+                if (retrievePlayerScore() === 5) {
+                    alert('You win!');
+                } else if (retrieveComputerScore() === 5) {
+                    alert('You lose!');
+                }
+            });
+        });
     </script>
 </body>
 </html>

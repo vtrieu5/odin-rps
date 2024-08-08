@@ -42,3 +42,15 @@ function playGame() {
     console.log(playRound(humanChoice, computerChoice));
     console.log('You: ' + humanScore + ' Computer: ' + computerScore);
 }
+
+function retrieveScore() {
+    return 'You: ' + humanScore + ' Computer: ' + computerScore;
+}
+
+function retrievePlayerScore() {
+    return humanScore;
+}
+
+function retrieveComputerScore() {
+    return computerScore;
+}
